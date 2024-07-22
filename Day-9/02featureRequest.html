@@ -1,0 +1,97 @@
+<!-- 1] Text content manipulation script: write a script that selects an HTML element by its ID and changes its text content. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myParagraph">original text</p>
+</body>
+<script>
+    const paragraph = document.getElementById('myParagraph');
+    paragraph.textContent = 'New Text';
+</script>
+</html>
+
+
+
+<!-- 2]Element Creation Script: Create a script that demonstrates creating a new div element and appending it to the body. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    const newDiv = document.createElement('div');
+    newDiv.textContent = 'This is a new div';
+    document.body.appendChild(newDiv);
+</script>
+</html>
+
+<!-- 3]Element Removal Script: Write a script that selects an HTML element and removes if from the DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="removeMe">Remove this paragraph</p>
+</body>
+<script>
+    const removeParagraph = document.getElementById('removeMe');
+    removeParagraph.remove();
+</script>
+</html>
+
+<!-- 4]Attribute Modification Script: Create a script that changes the attributes of an HTML element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="myImage" src="original.jpg" alt="Original Image">
+</body>
+<script>
+    const image = document.getElementById('myImage');
+    image.src = 'new-image.jpg';
+  </script>
+</html>
+
+
+<!-- 5]Event Handling Script: Write a script that adds event listners to HTML elements to change their content or style based on user interactions. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton">Click me</button>
+    <p id="textParagraph">Original text</p>
+</body>
+<script>
+    const button = document.getElementById('myButton');
+    const paragraph = document.getElementById('textParagraph');
+  
+    button.addEventListener('click', () => {
+      paragraph.textContent = 'Text has been changed';
+    });
+</script>
+</html>
