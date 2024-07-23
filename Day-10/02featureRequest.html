@@ -1,0 +1,168 @@
+<!-- Feature Request -->
+
+<!-- 1]Click Event Script: Write a script that adds a click event listener to a button to change the text content of a pragraph. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <p id="myParagraph">This is the original text.</p>
+    <button id="myButton">Change Text</button>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const paragraph = document.getElementById('myParagraph');
+
+        button.addEventListener('click', () => {
+            paragraph.textContent = 'This is the new text!';
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- 2]Mouse Events Scripts: Create a script that handles mouseover and mouseout events to change the background color of an element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <div id="myElement">Hover over me!</div>
+
+    <script>
+        const element = document.getElementById('myElement');
+
+        element.addEventListener('mouseover', () => {
+            element.style.backgroundColor = 'yellow';
+        });
+
+        element.addEventListener('mouseout', () => {
+            element.style.backgroundColor = '';
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- 3]Keyboard Events Script: Write a script that logs key presses and displays input field values using keydown and keyup event listeners. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <input id="myInput" type="text" placeholder="Type something...">
+
+    <script>
+        const input = document.getElementById('myInput');
+
+        input.addEventListener('keydown', (event) => {
+            console.log(`Key pressed: ${event.key}`);
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+<body>
+    <input id="myInput" type="text" placeholder="Type something...">
+    <p id="displayParagraph"></p>
+
+    <script>
+        const myInput = document.getElementById('myInput');
+        const para = document.getElementById('displayParagraph');
+
+        myInput.addEventListener('keyup', () => {
+            para.textContent = myInput.value;
+        });
+    </script>
+</body>
+</html>
+
+<!-- 4]Form Events Script: Create a script that handles form submission and change events on a select dropdown. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const myForm = document.getElementById('myForm');
+
+        form.addEventListener('change', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(myForm);
+            console.log('Form Data:');
+            formData.forEach((value, key) => {
+                console.log(`${key}: ${value}`);
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!-- 5]Event Delegation Script: Write a script that demonstrates event delegation by handling events on dynamically added child elements. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10</title>
+</head>
+<body>
+    <div id="parent">
+        <button id="addButton">Add Item</button>
+        <ul id="myList">
+            <li>Item 1</li>
+        </ul>
+    </div>
+
+    <script>
+        const parent = document.getElementById('parent');
+        const List = document.getElementById('myList');
+        const addButton = document.getElementById('addButton');
+
+        addButton.addEventListener('click', () => {
+            const newItem = document.createElement('li');
+            newItem.textContent = `Item ${List.children.length + 1}`;
+            List.appendChild(newItem);
+        });
+
+        parent.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                console.log(`Clicked item: ${event.target.textContent}`);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!-- Day-10[Event Handling] -->
+
+<!-- Activity-1[Basic Event Handling] --> 
+<!-- Task-1:Add a click event listener to a button that changes the text -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <p id="myParagraph">This is the original text.</p>
+    <button id="myButton">Change Text</button>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const paragraph = document.getElementById('myParagraph');
+
+        button.addEventListener('click', () => {
+            paragraph.textContent = 'This is the new text!';
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Task-2:Add a double click event listener to an image that toggles its visibility -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <img id="myImage" src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Sample Image">
+
+    <script>
+        const image = document.getElementById('myImage');
+
+        image.addEventListener('dblclick', () => {
+            image.style.display = image.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Activity-2[Mouse Events]-->
+<!-- Task-3:Add a mouseover event listener to an element that changes its background color. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <div id="myElement">Hover over me!</div>
+
+    <script>
+        const element = document.getElementById('myElement');
+
+        element.addEventListener('mouseover', () => {
+            element.style.backgroundColor = 'yellow';
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Task-4:Add a mouseout event listener to an element that reset its background color. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <div id="myElement">Hover over me!</div>
+
+    <script>
+        const element2 = document.getElementById('myElement');
+
+        element.addEventListener('mouseover', () => {
+            element2.style.backgroundColor = 'yellow';
+        });
+
+        element.addEventListener('mouseout', () => {
+            element2.style.backgroundColor = '';
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Activity-3[Keyboard Events]-->
+<!-- Task-5:Add a keydown event listener to an input field that logs the key pressed to the console.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <input id="myInput" type="text" placeholder="Type something...">
+
+    <script>
+        const input = document.getElementById('myInput');
+
+        input.addEventListener('keydown', (event) => {
+            console.log(`Key pressed: ${event.key}`);
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Task-6:Add a keyup event listener to an input field that displays the current value in a paragraph. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+<body>
+    <input id="myInput" type="text" placeholder="Type something...">
+    <p id="displayParagraph"></p>
+
+    <script>
+        const myInput = document.getElementById('myInput');
+        const para = document.getElementById('displayParagraph');
+
+        myInput.addEventListener('keyup', () => {
+            para.textContent = myInput.value;
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Activity-4[Form Events] -->
+<!-- Task-7:Add a submit event listener to a form that prevents the default submission and logs the form data to the console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            console.log('Form Data:');
+            formData.forEach((value, key) => {
+                console.log(`${key}: ${value}`);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Task-8:Add a change event listener to a form that prevents the default submission and logs the form data to the console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const myForm = document.getElementById('myForm');
+
+        form.addEventListener('change', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(myForm);
+            console.log('Form Data:');
+            formData.forEach((value, key) => {
+                console.log(`${key}: ${value}`);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Activity-5[Event Delegation] -->
+<!-- Task-9:Add a click event listner to a list that logs the text content of the clicked list item using event delegation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        const list = document.getElementById('myList');
+
+        list.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                console.log(`Clicked item: ${event.target.textContent}`);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Task-10:Add an event listener to a parent element that listens for events from dynamically added child elements. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10</title>
+</head>
+<body>
+    <div id="parent">
+        <button id="addButton">Add Item</button>
+        <ul id="myList">
+            <li>Item 1</li>
+        </ul>
+    </div>
+
+    <script>
+        const parent = document.getElementById('parent');
+        const List = document.getElementById('myList');
+        const addButton = document.getElementById('addButton');
+
+        addButton.addEventListener('click', () => {
+            const newItem = document.createElement('li');
+            newItem.textContent = `Item ${List.children.length + 1}`;
+            List.appendChild(newItem);
+        });
+
+        parent.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                console.log(`Clicked item: ${event.target.textContent}`);
+            }
+        });
+    </script>
+</body>
+</html>
+
