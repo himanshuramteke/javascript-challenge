@@ -2,7 +2,7 @@
 
 This is a simple Weather App that fetches and displays current weather data and a 5-day forecast for a specified city. The app uses the OpenWeatherMap API to retrieve weather information.
 
-![Weather App Screenshot](images/weatherappSS.png)
+![Weather App Screenshot](images/screenshot.png)
 
 ## Features🚀
 
