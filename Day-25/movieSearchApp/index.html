@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Search App</h1>
+        <input type="text" id="search-input" placeholder="Search for a movie...">
+        <button id="search-button">Search</button>
+    </header>
+    <main>
+        <div id="results-container" class="container"></div>
+    </main>
+
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-poster" src="" alt="Movie Poster">
+            <p id="modal-plot"></p>
+            <p><strong>Director:</strong> <span id="modal-director"></span></p>
+            <p><strong>Actors:</strong> <span id="modal-actors"></span></p>
+        </div>
+    </div>
+
+     <!-- Footer -->
+     <footer>
+        <p>&copy; 2024 | Himanshu Ramteke | </span> All rights reserved.</p>
+    </footer>
+
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
