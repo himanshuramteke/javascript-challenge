@@ -1,4 +1,4 @@
-# Movie Search App [Day-24 Challenge {Chai☕︎ aur Code</>}]
+# Movie Search App [Day-25 Challenge {Chai☕︎ aur Code</>}]
 
 This is a simple movie search app built with HTML, CSS, and JavaScript. It allows users to search for movies using the OMDB API and displays movie information including the title, poster, release year, and additional details such as plot, director, and actors.
 
