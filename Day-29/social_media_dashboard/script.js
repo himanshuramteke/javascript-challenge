@@ -1,7 +1,5 @@
-// Global array to hold posts
 const posts = [];
 
-// Handle login
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -11,7 +9,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     document.getElementById('dashboard-container').style.display = 'block';
 });
 
-// Handle post creation
 document.getElementById('post-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const content = document.getElementById('post-content').value;
@@ -37,7 +34,7 @@ function createPost(content, imageUrl) {
 
 function displayPosts() {
     const postsContainer = document.getElementById('posts-container');
-    postsContainer.innerHTML = ''; // Clear previous posts
+    postsContainer.innerHTML = ''; 
 
     const loggedInUser = sessionStorage.getItem('loggedInUser') || 'Anonymous';
 
